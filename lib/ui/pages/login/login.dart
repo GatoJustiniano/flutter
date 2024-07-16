@@ -136,8 +136,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
-      child: RaisedButton(
-        elevation: 5.0,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          elevation: 5, // Elevación
+        ),
         onPressed: () async {
           EasyLoading.instance.indicatorType =
               EasyLoadingIndicatorType.chasingDots;
@@ -150,23 +152,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
           String us = nameController.text;
           String pa = passwordController.text;
-          // try {
-          //   Character temp = await userController.usuario(user: us, pass: pa);
 
-            final prefs = await SharedPreferences.getInstance();
-            await prefs.setBool('islogged', true);
-          //   await prefs.setString('descripcion', temp.descripcion);
-          //   await prefs.setInt('idplanta', temp.idplanta);
-          //   await prefs.setString('empresa', temp.empresa);
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setBool('islogged', true);
 
-            context.vRouter.to('/cliente');
-          //   print(nameController.text);
-          //   print(passwordController.text);
-            EasyLoading.dismiss();
-          // } catch (err) {
-          //   print(err);
-          //   EasyLoading.showError("${err}");
-          // }
+          context.vRouter.to('/cliente');
+          EasyLoading.dismiss();
         },
         padding: const EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(

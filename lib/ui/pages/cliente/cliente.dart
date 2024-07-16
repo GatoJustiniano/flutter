@@ -2,9 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sys4signal/src/cliente/domain/usuario.dart';
-import 'package:sys4signal/src/cliente/application/response.dart';
 import 'package:sys4signal/src/cliente/infrastructure/controller.dart';
-import 'package:sys4signal/src/login/infrastructure/controller.dart';
 
 import '../../widget/mydrawer.dart';
 
@@ -17,7 +15,7 @@ class ClienteDash extends StatefulWidget {
 
 class _ClienteDashState extends State<ClienteDash> {
   List<Usuario> data = [];
-  String nombre ="";
+  String nombre = "";
   bool close = true;
   bool check = true;
   ClienteController clienteController = ClienteController();
@@ -25,21 +23,9 @@ class _ClienteDashState extends State<ClienteDash> {
   void initState() {
     clienteController.clienteDataControler().then((value) async {
       print(value);
-      //Map<String, dynamic> dt;
-      // for (Unidad item in value) {
-      //   x = {"fecha": item.fecha, "tiempo": item.tiempo, "placa": item.placa};
-      //   print(x["tiempo"]);
-      // }
       setState(
         () {
           data = value;
-          // for (Usuario item in data) {
-          //     nombre = item.nombre;
-          //     String carrera = item.carrera;
-          //     String institucion = item.institucion;
-          //     int  experiencia = item.experiencia;
-
-          // }
         },
       );
     });
@@ -80,7 +66,9 @@ class _ClienteDashState extends State<ClienteDash> {
                             showDialog(
                               context: context,
                               builder: (BuildContext context) =>
-                                  _buildPopupDialog(context,),
+                                  _buildPopupDialog(
+                                context,
+                              ),
                             );
                             setState(() {
                               nombre = data[index].nombre;
@@ -108,11 +96,13 @@ class _ClienteDashState extends State<ClienteDash> {
         crossAxisAlignment: CrossAxisAlignment.start,
       ),
       actions: <Widget>[
-        FlatButton(
+        TextButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
-          textColor: Theme.of(context).primaryColor,
+          style: TextButton.styleFrom(
+            foregroundColor: Theme.of(context).primaryColor,
+          ),
           child: SizedBox(
             height: 250,
             width: 250,
@@ -121,20 +111,26 @@ class _ClienteDashState extends State<ClienteDash> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children:   <Widget> [
-                    Text(nombre, 
-                    style:TextStyle(fontSize:22,color:Colors.black,decoration: TextDecoration.underline, fontStyle: FontStyle.italic)),
-                    // Text(data[0].institucion , 
-                    // style:TextStyle(fontSize:18,color:Colors.black)),
-                    Text(data[0].carrera, 
-                    style:TextStyle(fontSize:18,color:Colors.black, fontStyle: FontStyle.italic)),
-                    Text((data[0].experiencia).toString() + "años de Experiencia", 
-                    style:TextStyle(fontSize:14,color:Colors.black, fontStyle: FontStyle.italic)),
-                    
+                  children: <Widget>[
+                    Text(nombre,
+                        style: const TextStyle(
+                            fontSize: 22,
+                            color: Colors.black,
+                            decoration: TextDecoration.underline,
+                            fontStyle: FontStyle.italic)),
+                    Text(data[0].carrera,
+                        style: const TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                            fontStyle: FontStyle.italic)),
+                    Text(
+                        '${data[0].experiencia} años de Experiencia',
+                        style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontStyle: FontStyle.italic)),
                   ],
                 ),
-                
-              
                 const SizedBox(height: 10.0),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
