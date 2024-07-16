@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return VRouter(
       debugShowCheckedModeBanner: false,
-      title: "SYS4SIGNAL",
+      title: "LAGARRITA",
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       initialUrl: '/login',
       routes: [
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
             }
           },
           stackedRoutes: [
-            VWidget(path: '/cliente', widget: ClienteDash()),
+            VWidget(path: '/cliente', widget: const ClienteDash()),
             // VWidget(path: '/sysnet', widget: PieChartPage()),
             VWidget(path: '/login', widget: const LoginScreen()),
           ],

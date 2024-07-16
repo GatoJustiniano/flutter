@@ -28,11 +28,4 @@ class ClienteResponse {
     print(data);
     return data;
   }
-
-  // Map<String, dynamic> parsedCliente(raw) {
-
-  //   // print(fechas);
-
-  //   return raw;
-  // }
 }
