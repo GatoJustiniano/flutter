@@ -1,6 +1,6 @@
-# sys4signal
+# lagarrita 
 
-A new Flutter project.
+A new Flutter project basado en la garrita.
 
 ## Getting Started
 
