@@ -1,9 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:sys4signal/src/cliente/domain/usuario.dart';
-import 'package:sys4signal/src/cliente/infrastructure/controller.dart';
-
+import 'package:flutter_la_garrita/src/cliente/domain/usuario.dart';
+import 'package:flutter_la_garrita/src/cliente/infrastructure/controller.dart';
 import '../../widget/mydrawer.dart';
 
 class ClienteDash extends StatefulWidget {
