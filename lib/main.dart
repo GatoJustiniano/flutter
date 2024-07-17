@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:go_router/go_router.dart';
 import 'app_router.dart';
 
 void main() {
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +50,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class ClienteScreen extends StatelessWidget {
+  const ClienteScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +62,8 @@ class ClienteScreen extends StatelessWidget {
 }
 
 class SysnetScreen extends StatelessWidget {
+  const SysnetScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,6 +74,8 @@ class SysnetScreen extends StatelessWidget {
 }
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,14 +104,16 @@ Widget myDrawer({required BuildContext cntx}) {
           title: const Text('Cliente'),
           leading: const Icon(Icons.featured_play_list),
           onTap: () {
-            context.go('/cliente');
+            Navigator.pop(cntx);  // Cierra el Drawer
+            cntx.go('/cliente');
           },
         ),
         ListTile(
           title: const Text('Sysnet'),
           leading: const Icon(Icons.description),
           onTap: () {
-            context.go('/sysnet');
+            Navigator.pop(cntx);  // Cierra el Drawer
+            cntx.go('/sysnet');
           },
         ),
         const Divider(),
@@ -110,12 +121,16 @@ Widget myDrawer({required BuildContext cntx}) {
           title: const Text('Cerrar Sesión'),
           leading: const Icon(Icons.exit_to_app),
           onTap: () async {
-            final prefs = await SharedPreferences.getInstance();
-            prefs.clear();
-            context.go('/login');
+            await _clearPreferencesAndLogout(cntx);
           },
         ),
       ],
     ),
   );
+}
+
+Future<void> _clearPreferencesAndLogout(BuildContext cntx) async {
+  final prefs = await SharedPreferences.getInstance();
+  prefs.clear();
+  cntx.go('/login');
 }

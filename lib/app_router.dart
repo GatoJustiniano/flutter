@@ -1,24 +1,24 @@
 import 'package:go_router/go_router.dart';
-// Importa el archivo principal donde están definidas tus pantallas
+import 'main.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => HomeScreen(),
+        builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
         path: '/cliente',
-        builder: (context, state) => ClienteScreen(),
+        builder: (context, state) => const ClienteScreen(),
       ),
       GoRoute(
         path: '/sysnet',
-        builder: (context, state) => SysnetScreen(),
+        builder: (context, state) => const SysnetScreen(),
       ),
       GoRoute(
         path: '/login',
-        builder: (context, state) => LoginScreen(),
+        builder: (context, state) => const LoginScreen(),
       ),
     ],
   );

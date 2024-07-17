@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vrouter/vrouter.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() {
@@ -167,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
           final prefs = await SharedPreferences.getInstance();
           await prefs.setBool('islogged', true);
 
-          context.vRouter.to('/cliente');
+          context.go('/cliente');
           EasyLoading.dismiss();
         },
         // Usar un color apropiado para el botón

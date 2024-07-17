@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 @override
 Widget myDrawer({required BuildContext cntx}) {
@@ -11,10 +11,7 @@ Widget myDrawer({required BuildContext cntx}) {
           accountName: Text("Sys4signal"),
           accountEmail: Text(''),
           currentAccountPicture: CircleAvatar(
-            // backgroundColor: Colors.blue,
             radius: 50.0,
-            // backgroundImage: NetworkImage(
-            //     'https://st2.depositphotos.com/22141860/50480/i/1600/depositphotos_504800088-stock-photo-silhouette-adult-young-anonymous-man.jpg'),
             child: Text(
               "A",
               style: TextStyle(fontSize: 40.0),
@@ -24,15 +21,17 @@ Widget myDrawer({required BuildContext cntx}) {
         ListTile(
           title: const Text('Cliente'),
           leading: const Icon(Icons.featured_play_list),
-          onTap: () async {
-            cntx.vRouter.to('/cliente');
+          onTap: () {
+            Navigator.pop(cntx); // Cierra el Drawer
+            cntx.go('/cliente');
           },
         ),
         ListTile(
           title: const Text('Sysnet'),
           leading: const Icon(Icons.description),
-          onTap: () async {
-            cntx.vRouter.to('/sysnet');
+          onTap: () {
+            Navigator.pop(cntx); // Cierra el Drawer
+            cntx.go('/sysnet');
           },
         ),
         const Divider(),
@@ -40,12 +39,16 @@ Widget myDrawer({required BuildContext cntx}) {
           title: const Text('Cerrar Sesión'),
           leading: const Icon(Icons.exit_to_app),
           onTap: () async {
-            final prefs = await SharedPreferences.getInstance();
-            prefs.clear();
-            cntx.vRouter.to('/login');
+            await _clearPreferencesAndLogout(cntx);
           },
         ),
       ],
     ),
   );
+}
+
+Future<void> _clearPreferencesAndLogout(BuildContext cntx) async {
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.clear();
+  cntx.go('/login');
 }
