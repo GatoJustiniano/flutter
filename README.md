@@ -1,6 +1,7 @@
 # lagarrita 
 
 A new Flutter project basado en la garrita.
+Add dependencias
 
 ## Getting Started
 
