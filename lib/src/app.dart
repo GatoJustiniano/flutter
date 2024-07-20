@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
+          debugShowCheckedModeBanner: false,
 
           onGenerateRoute: (RouteSettings routeSettings) {
             return MaterialPageRoute<void>(
