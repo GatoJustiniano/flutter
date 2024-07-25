@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_la_garrita/config/menu/menu_items.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -53,7 +54,7 @@ class _CustomListTile extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
-        
+        context.push(menuItem.link);
       },
     );
   }
