@@ -15,8 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Hola mundo la garrita'),
+        child: Text('hola mundo'),
       ),
     );
   }
 }
+
+
