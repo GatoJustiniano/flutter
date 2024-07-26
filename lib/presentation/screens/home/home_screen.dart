@@ -3,6 +3,9 @@ import 'package:flutter_la_garrita/config/menu/menu_items.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
+
+  static const routeName = 'home_screen';
+
   const HomeScreen({super.key});
 
   @override

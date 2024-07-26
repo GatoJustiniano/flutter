@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
 
-  static const routeName = '/counter';
+  static const routeName = 'counters';
 
   @override
   State<CounterScreen> createState() => _CounterScreenState();

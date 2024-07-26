@@ -25,6 +25,11 @@ const appMenuItems = <MenuItem>[
       link: '/cards',
       icon: Icons.credit_card),
   MenuItem(
+      title: 'Otros',
+      subTitle: 'Contenedor de pantallas ajenas',
+      link: '/others',
+      icon: Icons.outbox_rounded),
+  MenuItem(
       title: 'Setting',
       subTitle: 'Configuraciones',
       link: '/settings',
