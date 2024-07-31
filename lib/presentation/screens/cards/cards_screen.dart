@@ -36,6 +36,12 @@ class _CardView extends StatelessWidget {
               _CardType1(label: card['label'], elevation: card['elevation'])),
           ...listCard.map((card) =>
               _CardType2(label: card['label'], elevation: card['elevation'])),
+          ...listCard.map((card) =>
+              _CardType3(label: card['label'], elevation: card['elevation'])),
+          ...listCard.map((card) =>
+              _CardType4(label: card['label'], elevation: card['elevation'])),
+
+          SizedBox(height: 20,)
         ],
       ),
     );
@@ -108,6 +114,77 @@ class _CardType2 extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// card filled
+class _CardType3 extends StatelessWidget {
+  final String label;
+  final double elevation;
+  const _CardType3({required this.label, required this.elevation});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Card(
+      color: colors.surfaceContainer,
+      elevation: elevation,
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.battery_unknown),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text('$label - filled'), 
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// card img
+class _CardType4 extends StatelessWidget {
+  final String label;
+  final double elevation;
+  const _CardType4({required this.label, required this.elevation});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      clipBehavior: Clip.hardEdge,
+      elevation: elevation,
+      child: Stack(
+        children: [
+          Image.network(
+            'https://picsum.photos/id/${elevation}/600/350',
+            height: 350,
+            fit: BoxFit.cover,
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(13))
+              ),
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.battery_unknown),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
