@@ -52,7 +52,6 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
             endReached = true;
           });
         }
-        print('${pageView.page}');
       },
     );
   }
@@ -95,7 +94,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                     from: 15,
                     delay: Duration(seconds: 2),
                     child: FilledButton(
-                      onPressed: () {},
+                      onPressed: () => context.pop(),
                       child: Text('Comenzar'),
                     ),
                   ),
