@@ -69,15 +69,13 @@ class _dialogView extends StatelessWidget {
                 context: context,
                 children: [
                   Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.')
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'),
                 ],
               );
             },
             child: Text('Licencias actuales'),
           ),
-          SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: 20),
           FilledButton.tonal(
             onPressed: () => openDialog(context),
             child: Text('Mostrar diálogo'),

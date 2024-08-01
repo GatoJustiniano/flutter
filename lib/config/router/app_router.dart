@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 /// The route configuration.
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/snackbars',
+  initialLocation: '/animated',
   routes: [
     GoRoute(
       name: HomeScreen.routeName,
