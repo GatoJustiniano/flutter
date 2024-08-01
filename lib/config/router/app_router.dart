@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 /// The route configuration.
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/ui-controls',
+  initialLocation: '/',
   routes: [
     GoRoute(
       name: HomeScreen.routeName,
