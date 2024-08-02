@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_la_garrita/presentation/widgets/custom_buttom.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -15,67 +16,55 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Vista contador'),
-          actions: [
-            CustomButton(
-              icon: Icons.refresh,
-              onPressed: () {
-                clickCounter = 0;
-                setState(() {});
-              },
-            ),
-          ],
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '$clickCounter',
-                style: const TextStyle(fontSize: 100),
-              ),
-              Text('Click${clickCounter == 1 ? '' : 's'}'),
-            ],
+      appBar: AppBar(
+        title: const Text('Vista contador'),
+        actions: [
+          CustomButton(
+            icon: Icons.refresh,
+            onPressed: () {
+              clickCounter = 0;
+              setState(() {});
+            },
           ),
-        ),
-        floatingActionButton: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomButton(
-              icon: Icons.plus_one,
-              onPressed: () {
-                clickCounter++;
-                setState(() {});
-              },
+            Text(
+              '$clickCounter',
+              style: const TextStyle(fontSize: 100),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            CustomButton(
-              icon: Icons.exposure_minus_1_rounded,
-              onPressed: () {
-                if (clickCounter == 0) return;
-                clickCounter--;
-                setState(() {});
-              },
-            ),
+            Text('Click${clickCounter == 1 ? '' : 's'}'),
           ],
-        ));
-  }
-}
-
-class CustomButton extends StatelessWidget {
-  final IconData icon;
-  final VoidCallback? onPressed;
-
-  const CustomButton({super.key, required this.icon, this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: onPressed,
-      child: Icon(icon),
+        ),
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          CustomButton(
+            icon: Icons.plus_one,
+            onPressed: () {
+              clickCounter++;
+              setState(() {});
+            },
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          CustomButton(
+            icon: Icons.exposure_minus_1_rounded,
+            onPressed: () {
+              if (clickCounter == 0) return;
+              clickCounter--;
+              setState(() {});
+            },
+          ),
+        ],
+      ),
     );
   }
 }
+
+
