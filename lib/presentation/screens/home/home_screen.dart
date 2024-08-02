@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_la_garrita/config/menu/menu_items.dart';
+import 'package:flutter_la_garrita/presentation/widgets/side_menu.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
-
   static const routeName = 'home_screen';
 
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         title: Text('Flutter widgets'),
       ),
       body: _HomeView(),
+      drawer: SideMenu(scaffoldKey: scaffoldKey,),
     );
   }
 }

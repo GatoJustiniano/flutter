@@ -31,6 +31,11 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const CounterScreen(),
     ),
     GoRoute(
+      name: CounterRiverpoodScreen.routeName,
+      path: '/counters_riverpood',
+      builder: (context, state) => const CounterRiverpoodScreen(),
+    ),
+    GoRoute(
       path: '/progress',
       name: ProgressScreen.routeName,
       builder: (context, state) => const ProgressScreen(),
@@ -59,6 +64,11 @@ final GoRouter appRouter = GoRouter(
       path: '/infinite',
       name: InfiniteScrollScreen.routeName,
       builder: (context, state) => const InfiniteScrollScreen(),
+    ),
+    GoRoute(
+      path: '/theme-changer',
+      name: ThemeSystemScreen.routeName,
+      builder: (context, state) => const ThemeSystemScreen(),
     ),
     GoRoute(
       path: '/settings',
