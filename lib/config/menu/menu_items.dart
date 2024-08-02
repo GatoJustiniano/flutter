@@ -43,6 +43,11 @@ const appMenuWidgetsItems = <MenuItem>[
       link: '/counters',
       icon: Icons.smart_button_outlined),
   MenuItem(
+      title: 'Counters Riverpood',
+      subTitle: 'pantalla realizada con el provider Riverpood',
+      link: '/counters_riverpood',
+      icon: Icons.smart_button_rounded),
+  MenuItem(
       title: 'Progress Indicators',
       subTitle: 'Generales y controlados',
       link: '/progress',
