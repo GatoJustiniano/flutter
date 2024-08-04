@@ -42,11 +42,17 @@ class _ThemeView extends ConsumerWidget {
       itemBuilder: (context, index) {
         final color = colors[index];
         return RadioListTile(
-          title: Text(
-            'Color es: ',
-            style: TextStyle(color: color),
+          
+          subtitle: FilledButton(
+            onPressed: null,
+            child: Text(
+              'Color: ${color.value}',
+              style: TextStyle(color: Colors.white),
+            ),
+            style: ButtonStyle(
+              backgroundColor: WidgetStatePropertyAll(color),
+            ),
           ),
-          subtitle: Text('${color.value}'),
           activeColor: color,
           value: index,
           groupValue: selectedColor,

@@ -33,8 +33,8 @@ class _SettingView extends ConsumerWidget {
         SwitchListTile(
           title: Text('Imagen de fondo'),
           subtitle: isDarkMode
-              ? Text('Modo Noche Activado')
-              : Text('Modo Día Activado'),
+              ? Text('Modo Oscuro Activado')
+              : Text('Modo Claro Activado'),
           value: isDarkMode,
           onChanged: (isDarkMode) {
             ref.watch(themeNotifierProvider.notifier).toggleDarkMode();
@@ -45,15 +45,15 @@ class _SettingView extends ConsumerWidget {
           ),
         ),
         Expanded(
-          child: _GenerarSettingItems(),
+          child: _SettingItems(),
         ),
       ],
     );
   }
 }
 
-class _GenerarSettingItems extends StatelessWidget {
-  const _GenerarSettingItems();
+class _SettingItems extends StatelessWidget {
+  const _SettingItems();
 
   @override
   Widget build(BuildContext context) {
