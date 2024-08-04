@@ -5,7 +5,7 @@ import 'package:flutter_la_garrita/presentation/providers/theme_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() => runApp(
-      ProviderScope(
+      const ProviderScope(
         child: MainApp(),
       ),
     );

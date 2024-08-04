@@ -14,9 +14,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: Text('Flutter widgets'),
+        title: const Text('Flutter widgets'),
       ),
-      body: _HomeView(),
+      body: const _HomeView(),
       drawer: SideMenu(scaffoldKey: scaffoldKey,),
     );
   }

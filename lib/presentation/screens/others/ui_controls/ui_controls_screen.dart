@@ -8,9 +8,9 @@ class UiControlsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('UI Controles'),
+        title: const Text('UI Controles'),
       ),
-      body: _UiControlsView(),
+      body: const _UiControlsView(),
     );
   }
 }
@@ -34,24 +34,24 @@ class _UiControlsViewState extends State<_UiControlsView> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      physics: ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       children: [
         SwitchListTile(
-          title: Text('Modo desarrollador'),
-          subtitle: Text('Controles extras'),
+          title: const Text('Modo desarrollador'),
+          subtitle: const Text('Controles extras'),
           value: isDeveloper,
           onChanged: (value) => setState(() {
             isDeveloper = !isDeveloper;
           }),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         ExpansionTile(
-          title: Text('Tipo de transporte'),
+          title: const Text('Tipo de transporte'),
           subtitle: Text('$selectedTransport'),
           children: [
             RadioListTile(
-              title: Text('Transporte Carro'),
-              subtitle: Text('type de transporte'),
+              title: const Text('Transporte Carro'),
+              subtitle: const Text('type de transporte'),
               value: typeTransport.car,
               groupValue: selectedTransport,
               onChanged: (value) => setState(() {
@@ -59,8 +59,8 @@ class _UiControlsViewState extends State<_UiControlsView> {
               }),
             ),
             RadioListTile(
-              title: Text('Transporte Bote'),
-              subtitle: Text('type de transporte'),
+              title: const Text('Transporte Bote'),
+              subtitle: const Text('type de transporte'),
               value: typeTransport.boat,
               groupValue: selectedTransport,
               onChanged: (value) => setState(() {
@@ -68,8 +68,8 @@ class _UiControlsViewState extends State<_UiControlsView> {
               }),
             ),
             RadioListTile(
-              title: Text('Transporte Avión'),
-              subtitle: Text('type de transporte'),
+              title: const Text('Transporte Avión'),
+              subtitle: const Text('type de transporte'),
               value: typeTransport.plane,
               groupValue: selectedTransport,
               onChanged: (value) => setState(() {
@@ -77,8 +77,8 @@ class _UiControlsViewState extends State<_UiControlsView> {
               }),
             ),
             RadioListTile(
-              title: Text('Transporte Submarino'),
-              subtitle: Text('type de transporte'),
+              title: const Text('Transporte Submarino'),
+              subtitle: const Text('type de transporte'),
               value: typeTransport.submarine,
               groupValue: selectedTransport,
               onChanged: (value) => setState(() {
@@ -87,26 +87,26 @@ class _UiControlsViewState extends State<_UiControlsView> {
             ),
           ],
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         CheckboxListTile(
-          title: Text('Desayuno'),
-          subtitle: Text('Incluir?'),
+          title: const Text('Desayuno'),
+          subtitle: const Text('Incluir?'),
           value: wantsBreakfast,
           onChanged: (value) => setState(() {
             wantsBreakfast = !wantsBreakfast;
           }),
         ),
         CheckboxListTile(
-          title: Text('Almuerzo'),
-          subtitle: Text('Incluir?'),
+          title: const Text('Almuerzo'),
+          subtitle: const Text('Incluir?'),
           value: wantsLunch,
           onChanged: (value) => setState(() {
             wantsLunch = !wantsLunch;
           }),
         ),
         CheckboxListTile(
-          title: Text('Cena'),
-          subtitle: Text('Incluir?'),
+          title: const Text('Cena'),
+          subtitle: const Text('Incluir?'),
           value: wantsDinner,
           onChanged: (value) => setState(() {
             wantsDinner = !wantsDinner;

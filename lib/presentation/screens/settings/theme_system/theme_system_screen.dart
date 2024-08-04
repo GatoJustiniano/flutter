@@ -12,7 +12,7 @@ class ThemeSystemScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Temas'),
+        title: const Text('Temas'),
         actions: [
           IconButton(
             icon: Icon(isDarkMode
@@ -24,7 +24,7 @@ class ThemeSystemScreen extends ConsumerWidget {
           )
         ],
       ),
-      body: _ThemeView(),
+      body: const _ThemeView(),
     );
   }
 }
@@ -45,12 +45,12 @@ class _ThemeView extends ConsumerWidget {
           
           subtitle: FilledButton(
             onPressed: null,
-            child: Text(
-              'Color: ${color.value}',
-              style: TextStyle(color: Colors.white),
-            ),
             style: ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(color),
+            ),
+            child: Text(
+              'Color: ${color.value}',
+              style: const TextStyle(color: Colors.white),
             ),
           ),
           activeColor: color,

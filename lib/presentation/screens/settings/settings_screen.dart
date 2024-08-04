@@ -12,13 +12,13 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
-      body: Center(
+      body: const Center(
         child: _SettingView(),
       ),
     );
-  }
+  } 
 }
 
 class _SettingView extends ConsumerWidget {
@@ -31,10 +31,10 @@ class _SettingView extends ConsumerWidget {
     return Column(
       children: [
         SwitchListTile(
-          title: Text('Imagen de fondo'),
+          title: const Text('Imagen de fondo'),
           subtitle: isDarkMode
-              ? Text('Modo Oscuro Activado')
-              : Text('Modo Claro Activado'),
+              ? const Text('Modo Oscuro Activado')
+              : const Text('Modo Claro Activado'),
           value: isDarkMode,
           onChanged: (isDarkMode) {
             ref.watch(themeNotifierProvider.notifier).toggleDarkMode();
@@ -44,7 +44,7 @@ class _SettingView extends ConsumerWidget {
             color: isColor.primary,
           ),
         ),
-        Expanded(
+        const Expanded(
           child: _SettingItems(),
         ),
       ],

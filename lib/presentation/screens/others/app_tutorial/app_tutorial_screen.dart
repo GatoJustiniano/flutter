@@ -70,7 +70,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
         children: [
           PageView(
             controller: pageView,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: slides
                 .map((item) => _Slide(
                     title: item.title,
@@ -83,7 +83,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
             top: 50,
             child: TextButton(
               onPressed: () => context.pop(),
-              child: Text('Salir'),
+              child: const Text('Salir'),
             ),
           ),
           endReached
@@ -92,14 +92,14 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                   right: 30,
                   child: FadeInRight(
                     from: 15,
-                    delay: Duration(seconds: 2),
+                    delay: const Duration(seconds: 2),
                     child: FilledButton(
                       onPressed: () => context.pop(),
-                      child: Text('Comenzar'),
+                      child: const Text('Comenzar'),
                     ),
                   ),
                 )
-              : SizedBox(),
+              : const SizedBox(),
         ],
       ),
     );
@@ -120,18 +120,18 @@ class _Slide extends StatelessWidget {
     final captionStyle = Theme.of(context).textTheme.bodySmall;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image(image: AssetImage(imageUrl)),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             title,
             style: titleStyle,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             caption,
             style: captionStyle,

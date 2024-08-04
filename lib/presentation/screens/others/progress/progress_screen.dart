@@ -8,9 +8,9 @@ class ProgressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Progress Indicadores'),
+        title: const Text('Progress Indicadores'),
       ),
-      body: _ProgressView(),
+      body: const _ProgressView(),
     );
   }
 }
@@ -20,7 +20,7 @@ class _ProgressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         children: [
           SizedBox(height: 30),
@@ -47,7 +47,7 @@ class _ControllerProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: Stream.periodic(
-        Duration(milliseconds: 300),
+        const Duration(milliseconds: 300),
         (value) {
           return (value * 3) / 100;
         },
@@ -64,7 +64,7 @@ class _ControllerProgressIndicator extends StatelessWidget {
                 strokeWidth: 2,
                 backgroundColor: Colors.black45,
               ),
-              SizedBox(width: 20),
+              const SizedBox(width: 20),
               Expanded(
                 child: LinearProgressIndicator(
                   value: progressValue,

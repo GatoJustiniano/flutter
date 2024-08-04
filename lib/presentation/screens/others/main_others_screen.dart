@@ -11,9 +11,9 @@ class MainOthersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Otras pantallas con funciones'),
+          title: const Text('Otras pantallas con funciones'),
         ),
-        body: _HomeView());
+        body: const _HomeView());
   }
 }
 

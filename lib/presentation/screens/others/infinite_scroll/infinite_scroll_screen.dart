@@ -40,7 +40,7 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
     if (isLoading) return;
     isLoading = true;
     setState(() {});
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     addFiveImages();
     isLoading = false;
 

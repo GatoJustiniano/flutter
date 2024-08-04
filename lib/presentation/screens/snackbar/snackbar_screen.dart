@@ -9,7 +9,7 @@ class SnackbarScreen extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
     ScaffoldMessenger.of(context).clearSnackBars();
     final message = SnackBar(
-      content: Text('Mensaje en snackbar! '),
+      content: const Text('Mensaje en snackbar! '),
       action: SnackBarAction(
         backgroundColor: colors.primary,
         label: 'Seguro?',
@@ -24,12 +24,12 @@ class SnackbarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Snackbar y dialogos'),
+        title: const Text('Snackbar y dialogos'),
       ),
-      body: _dialogView(),
+      body: const _dialogView(),
       floatingActionButton: FloatingActionButton.extended(
-        label: Text('Mostrar Snackbar'),
-        icon: Icon(Icons.remove_red_eye_outlined),
+        label: const Text('Mostrar Snackbar'),
+        icon: const Icon(Icons.remove_red_eye_outlined),
         onPressed: () {
           showCustomSnackbar(context);
         },
@@ -46,12 +46,12 @@ class _dialogView extends StatelessWidget {
       barrierDismissible: false,
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Estás seguro'),
-        content: Text(
+        title: const Text('Estás seguro'),
+        content: const Text(
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'),
         actions: [
-          TextButton(onPressed: () => context.pop(), child: Text('Cancelar')),
-          FilledButton(onPressed: () => context.pop(), child: Text('Aceptar'))
+          TextButton(onPressed: () => context.pop(), child: const Text('Cancelar')),
+          FilledButton(onPressed: () => context.pop(), child: const Text('Aceptar'))
         ],
       ),
     );
@@ -68,17 +68,17 @@ class _dialogView extends StatelessWidget {
               showAboutDialog(
                 context: context,
                 children: [
-                  Text(
+                  const Text(
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'),
                 ],
               );
             },
-            child: Text('Licencias actuales'),
+            child: const Text('Licencias actuales'),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           FilledButton.tonal(
             onPressed: () => openDialog(context),
-            child: Text('Mostrar diálogo'),
+            child: const Text('Mostrar diálogo'),
           ),
         ],
       ),

@@ -32,11 +32,11 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animación de contenedor'),
+        title: const Text('Animación de contenedor'),
       ),
       body: Center(
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOutCubic,
           width: width <= 0 ? 0 : width,
           height: height <= 0 ? 0 : height,
@@ -49,7 +49,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: changeShape,
-        child: Icon(Icons.play_arrow_outlined),
+        child: const Icon(Icons.play_arrow_outlined),
       ),
     );
   }
