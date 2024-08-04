@@ -36,6 +36,14 @@ const appMenuItems = <MenuItem>[
       icon: Icons.settings),
 ];
 
+const appMenuSettingItems = <MenuItem>[
+  MenuItem(
+      title: 'Temas',
+      subTitle: 'permite cambiar los colores de tema',
+      link: '/theme-changer',
+      icon: Icons.color_lens_outlined),
+];
+
 const appMenuWidgetsItems = <MenuItem>[
   MenuItem(
       title: 'Counters',
