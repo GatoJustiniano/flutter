@@ -42,6 +42,11 @@ const appMenuSettingItems = <MenuItem>[
       subTitle: 'permite cambiar los colores de tema',
       link: '/theme-changer',
       icon: Icons.color_lens_outlined),
+  MenuItem(
+      title: 'Tamaño de fuente',
+      subTitle: 'tamaño de fuente',
+      link: '/',
+      icon: Icons.font_download_rounded ),
 ];
 
 const appMenuWidgetsItems = <MenuItem>[
