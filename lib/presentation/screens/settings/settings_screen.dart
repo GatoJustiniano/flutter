@@ -24,36 +24,43 @@ class _SettingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: appMenuSettingItems.length,
-      itemBuilder: (context, index) {
-        final menuItem = appMenuSettingItems[index];
-        return _CustomListTile(menuItem: menuItem);
-      },
+    return Column(
+      children: [
+        SwitchListTile(
+          title: Text('Modo desarrollador'),
+          subtitle: Text('Controles extras'),
+          value: true,
+          onChanged: (value) {},
+        ),
+        Expanded(
+          child: _GenerarSettingItems(),
+        ),
+      ],
     );
   }
 }
 
-class _CustomListTile extends StatelessWidget {
-  const _CustomListTile({
-    required this.menuItem,
-  });
-
-  final MenuItem menuItem;
+class _GenerarSettingItems extends StatelessWidget {
+  const _GenerarSettingItems();
 
   @override
   Widget build(BuildContext context) {
     final isColor = Theme.of(context).colorScheme;
-
-    return ListTile(
-      leading: Icon(
-        menuItem.icon,
-        color: isColor.primary,
-      ),
-      title: Text(menuItem.title),
-      subtitle: Text(menuItem.subTitle),
-      onTap: () {
-        context.push(menuItem.link);
+    return ListView.builder(
+      itemCount: appMenuSettingItems.length,
+      itemBuilder: (context, index) {
+        final menuItem = appMenuSettingItems[index];
+        return ListTile(
+          leading: Icon(
+            menuItem.icon,
+            color: isColor.primary,
+          ),
+          title: Text(menuItem.title),
+          subtitle: Text(menuItem.subTitle),
+          onTap: () {
+            context.push(menuItem.link);
+          },
+        );
       },
     );
   }
